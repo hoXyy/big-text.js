@@ -163,7 +163,7 @@ HTMLElement.prototype.bigText = function(options){
 
 	if (options.limitingDimension.toLowerCase() === "width") {
 		lineHeight= Math.floor(widthFactor * 1000);
-		parentStyle.height = lineHeight;
+		parentStyle.height = lineHeight + "px";
 	} else if (options.limitingDimension.toLowerCase() === "height") {
 		lineHeight= Math.floor(heightFactor * 1000);
 	} else if (widthFactor < heightFactor)
