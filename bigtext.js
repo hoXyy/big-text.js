@@ -1,9 +1,10 @@
 /*
-bigtext.js v1.0.0, September 2016
+Brorlandi/bigtext.js v1.0.0, 2017
 Adapted from DanielHoffmann/jquery-bigtext, v1.3.0, May 2014
+And from Jetroid/bigtext.js v1.0.0, September 2016
 
 Usage:
-document.getElementById("myElement").bigText({
+BigText("#myElement",{
 	rotateText: {Number}, (null)
 	fontSizeFactor: {Number}, (0.8)
 	maximumFontSize: {Number}, (null)
@@ -13,8 +14,10 @@ document.getElementById("myElement").bigText({
 	textAlign: {String}, ("center")
 });
 
-This code from: https://github.com/Jetroid/bigtext.js
-Original Project: https://github.com/DanielHoffmann/jquery-bigtext
+
+Original Projects: 
+https://github.com/DanielHoffmann/jquery-bigtext
+https://github.com/Jetroid/bigtext.js
 
 Options:
 
@@ -34,6 +37,8 @@ textAlign: Sets the text align of the element. Possible values: "left", "center"
 
 whiteSpace: Sets whitespace handling. Possible values: "nowrap", "pre". Defaults to "nowrap". (Can also be set to enable wrapping but this doesn't work well.)
 
+Bruno Orlandi - 2017
+
 Copyright (C) 2013 Daniel Hoffmann Bernardes, Ícaro Technologies
 Copyright (C) 2016 Jet Holt
 
@@ -43,7 +48,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-_calculateInnerDimensions = function(computedStyle){
+
+function _calculateInnerDimensions(computedStyle){
 	//Calculate the inner width and height
 	var innerWidth;
 	var innerHeight;
@@ -55,9 +61,9 @@ _calculateInnerDimensions = function(computedStyle){
 	var paddingTop = parseInt(computedStyle.getPropertyValue("padding-top"));
 	var paddingBottom = parseInt(computedStyle.getPropertyValue("padding-bottom"));
 	var borderLeft = parseInt(computedStyle.getPropertyValue("border-left-width"));
- 	var borderRight = parseInt(computedStyle.getPropertyValue("border-right-width"));
- 	var borderTop = parseInt(computedStyle.getPropertyValue("border-top-width"));
- 	var borderBottom = parseInt(computedStyle.getPropertyValue("border-bottom-width"));
+	var borderRight = parseInt(computedStyle.getPropertyValue("border-right-width"));
+	var borderTop = parseInt(computedStyle.getPropertyValue("border-top-width"));
+	var borderBottom = parseInt(computedStyle.getPropertyValue("border-bottom-width"));
 
 	//If box-sizing is border-box, we need to subtract padding and border.
 	var parentBoxSizing = computedStyle.getPropertyValue("box-sizing");
@@ -74,7 +80,15 @@ _calculateInnerDimensions = function(computedStyle){
 	return obj;
 }
 
-HTMLElement.prototype.bigText = function(options){
+BigText = function(element, options){
+
+	if (typeof element === 'string') {
+		element = document.querySelector(element);
+	} else if (element.length) {
+		// Support for array based queries (such as jQuery)
+		element = element[0];
+	}
+
 	var defaultOptions = {
 		rotateText: null,
 		fontSizeFactor: 0.8,
@@ -93,9 +107,9 @@ HTMLElement.prototype.bigText = function(options){
 			options[opt] = defaultOptions[opt];
 	
 	//Get variables which we will reference frequently
-	var style = this.style;
-	var computedStyle = document.defaultView.getComputedStyle(this);
-	var parent = this.parentNode;
+	var style = element.style;
+	var computedStyle = document.defaultView.getComputedStyle(element);
+	var parent = element.parentNode;
 	var parentStyle = parent.style;
 	var parentComputedStyle = document.defaultView.getComputedStyle(parent);
 	
@@ -136,8 +150,8 @@ HTMLElement.prototype.bigText = function(options){
 	var parentInnerHeight = parentInnerDimensions["height"];
 	
 	var box = {
-		width: this.offsetWidth, //Note: This is slightly larger than the jQuery version
-		height: this.offsetHeight,
+		width: element.offsetWidth, //Note: This is slightly larger than the jQuery version
+		height: element.offsetHeight,
 	};
 
 	
@@ -153,8 +167,8 @@ HTMLElement.prototype.bigText = function(options){
 		//calculating bounding box of the rotated element
 		var sine = Math.abs(Math.sin(options.rotateText * Math.PI / 180));
 		var cosine = Math.abs(Math.cos(options.rotateText * Math.PI / 180));
-		box.width = this.offsetWidth * cosine + this.offsetHeight * sine;
-		box.height = this.offsetWidth * sine + this.offsetHeight * cosine;
+		box.width = element.offsetWidth * cosine + element.offsetHeight * sine;
+		box.height = element.offsetWidth * sine + element.offsetHeight * cosine;
 	}
 	
 	var widthFactor = (parentInnerWidth - parentPadding.left - parentPadding.right) / box.width;
@@ -221,4 +235,6 @@ HTMLElement.prototype.bigText = function(options){
 
 	//shows the element after the work is done
 	style.visibility = "visible";
+
+	return element;
 }

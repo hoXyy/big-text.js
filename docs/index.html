@@ -5,12 +5,11 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Jquery-bigtext : jQuery plugin that makes text inside as big as possible while still fitting on the parent.">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-    <script type="text/javascript" src="https://rawgit.com/DanielHoffmann/jquery-bigtext/master/jquery-bigtext.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/BrOrlandi/bigtext.js/master/bigtext.js"></script>
+    
     <style>
       div.test-div {
         background: #ADF;
@@ -30,66 +29,70 @@
         margin-bottom: 100px;
       }
     </style>
-    <title>Jquery-BigText</title>
+    <title>BigText.js</title>
     <script type="text/javascript">
-$(document).ready(function() {
-  $("span#span1").bigText();
+    
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        BigText("span#span1");
 
-    $("span#span2").bigText();
+        BigText("span#span2");
 
-    $("span#span3").bigText({
-        fontSizeFactor: 1
+        BigText("span#span3",{
+            fontSizeFactor: 1
+        });
+
+        BigText("span#span4",{
+            horizontalAlign: "left",
+        });
+
+        BigText("span#span5",{
+            verticalAlign: "bottom",
+        });
+
+        BigText("span#span6",{
+            rotateText: 90
+        });
+
+        BigText("span#span7",{
+            rotateText: -90
+        });
+
+        var example8= function() { //need to wait font-awesome to load properly before calling the plugin
+        BigText("span#span8");
+        };
+        setTimeout(example8, 300); //there is no problem calling BigText multiple times
+        setTimeout(example8, 500); //once font-awesome finishes loading one of these callbacks will properly size the text
+        setTimeout(example8, 800);
+        setTimeout(example8, 1500);
+        setTimeout(example8, 5000);
+
+        BigText("span#span9",{
+            maximumFontSize: 25
+        });
+
+        BigText("span#span10",{
+            limitingDimension: "width"
+        });
+
+        BigText("span#span11",{
+            limitingDimension: "height"
+        });
+
+        BigText("span#span12",{
+        textAlign: "right"
+        });
+
+        BigText("span#span13");
+
+        BigText("span#complex_span1");
+        BigText("span#complex_span2");
+        BigText("span#complex_span3");
+        BigText("span#complex_span4",{
+            rotateText: -45,
+            fontSizeFactor: 1
+        });
     });
 
-    $("span#span4").bigText({
-    horizontalAlign: "left",
-    });
-
-    $("span#span5").bigText({
-      verticalAlign: "bottom",
-    });
-
-    $("span#span6").bigText({
-        rotateText: 90
-    });
-
-    $("span#span7").bigText({
-        rotateText: -90
-    });
-
-    var example8= function() { //need to wait font-awesome to load properly before calling the plugin
-      $("span#span8").bigText();
-    };
-    setTimeout(example8, 300); //there is no problem calling BigText multiple times
-    setTimeout(example8, 500); //once font-awesome finishes loading one of these callbacks will properly size the text
-    setTimeout(example8, 800);
-    setTimeout(example8, 1500);
-    setTimeout(example8, 5000);
-
-    $("span#span9").bigText({
-        maximumFontSize: 25
-    });
-
-    $("span#span10").bigText({
-      limitingDimension: "width"
-    });
-
-    $("span#span11").bigText({
-      limitingDimension: "height"
-    });
-
-    $("span#span12").bigText({
-      textAlign: "right"
-    });
-
-    $("span#span13").bigText();
-
-    $("span#complex_span1, span#complex_span2, span#complex_span3").bigText();
-    $("span#complex_span4").bigText({
-      rotateText: -45,
-      fontSizeFactor: 1
-    });
-});
 </script>
   </head>
 
@@ -98,14 +101,14 @@ $(document).ready(function() {
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/DanielHoffmann/jquery-bigtext">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/BrOrlandi/bigtext.js">View on GitHub</a>
 
-          <h1 id="project_title">Jquery-bigtext</h1>
-          <h2 id="project_tagline">jQuery plugin that makes text inside as big as possible while still fitting on the parent.</h2>
+          <h1 id="project_title">BigText.js</h1>
+          <h2 id="project_tagline">A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on <a href="https://github.com/DanielHoffmann/jquery-bigtext" class="href">DanielHoffmann/jquery-bigtext</a></h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/DanielHoffmann/jquery-bigtext/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/DanielHoffmann/jquery-bigtext/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/BrOrlandi/bigtext.js/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/BrOrlandi/bigtext.js/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -113,14 +116,14 @@ $(document).ready(function() {
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-Full documentation available on <a href="https://github.com/DanielHoffmann/jquery-bigtext">GitHub</a>
+Full documentation available on <a href="https://github.com/BrOrlandi/bigtext.js">GitHub</a>
 
 
     <h2>Example1</h2>
     div size: width: 300px; height: 200px; <br />
     Simple example. Makes the text as big as possible without overflowing the parent div.
     <pre>
-        $("span#span1").bigText();
+        BigText("span#span1");
     </pre>
     <div class="test-div" style="
         width: 300px;
@@ -136,7 +139,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 800px; height: 100px; <br />
     Same as Example1 but with a different size div. Notice that jquery-bigtext checks both heights and widths to prevent overflowing.
     <pre>
-        $("span#span2").bigText();
+        BigText("span#span2");
     </pre>
     <div class="test-div" style="
         width: 800px;
@@ -153,7 +156,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 800px; height: 100px; <br />
     Same as Example2 but with fontSizeFactor set to 1. fontSizeFactor default is 0.8, it's used to give some vertical spacing for letters that overflow the line-height (like 'g', 'Á' and most other accentuated uppercase letters). This does not affect the font-size if the limiting factor is the width of the parent div.
     <pre>
-        $("span#span3").bigText({
+        BigText("span#span3",{
             fontSizeFactor: 1
         });
     </pre>
@@ -169,7 +172,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 800px; height: 100px; <br />
     Horizontal alignment
     <pre>
-        $("span#span4").bigText({
+        BigText("span#span4",{
             horizontalAlign: "left",
         });
     </pre>
@@ -185,7 +188,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 200px; height: 200px; <br />
     Vertical Alignment
     <pre>
-        $("span#span5").bigText({
+        BigText("span#span5",{
             verticalAlign: "bottom",
         });
     </pre>
@@ -203,9 +206,9 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     <h2>Example6</h2>
     div size: width: 100px; height: 300px; <br />
     BigText on rotated text? yes please! <br />
-    Note: BigText, unlike padding, does not support setting the rotation of the text element on CSS. You must set through the $.bigText() options.
+    Note: BigText, unlike padding, does not support setting the rotation of the text element on CSS. You must set through the BigText() options.
     <pre>
-        $("span#span6").bigText({
+        BigText("span#span6",{
             rotateText: 90
         });
     </pre>
@@ -221,7 +224,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 100px; height: 300px; <br />
     More rotated examples.
     <pre>
-        $("span#span7").bigText({
+        BigText("span#span7",{
             rotateText: -90
         });
     </pre>
@@ -235,7 +238,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
 
     <h2>Example8</h2>
     div size: width: 300px; height: 150px; <br />
-    The element you call $().bigText() in can have other elements inside it. If you set the font-size in the em unit in these elements you can have bigger text followed by smaller text like below. Using this technique you can also have any kind of text, like <a href='http://fortawesome.github.io/Font-Awesome/'>font-awesome</a> icons.<br />
+    The element you call BigText() in can have other elements inside it. If you set the font-size in the em unit in these elements you can have bigger text followed by smaller text like below. Using this technique you can also have any kind of text, like <a href='http://fortawesome.github.io/Font-Awesome/'>font-awesome</a> icons.<br />
   HTML:
   <pre>
     &lt;div&gt;
@@ -249,7 +252,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
   </pre>
   Javascript:
     <pre>
-        $("span#span8").bigText();
+        BigText("span#span8");
     </pre>
     <div class="test-div" style="
         width: 300px;
@@ -268,7 +271,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 600px; height: 300px; <br />
     Maximum font size option
     <pre>
-    $("span#span9").bigText({
+    BigText("span#span9",{
       maximumFontSize: 25,
     });
     </pre>
@@ -284,7 +287,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 600px; height: auto; <br />
     Limits the font size based only on the parent element width instead of both width and height.
     <pre>
-    $("span#span9").bigText({
+    BigText("span#span10",{
       limitingDimension: "width",
     });
     </pre>
@@ -300,7 +303,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: auto; height: 100px; <br />
     Limits the font size based only on the parent element height instead of both width and height.
     <pre>
-    $("span#span9").bigText({
+    BigText("span#span11",{
       limitingDimension: "height",
     });
     </pre>
@@ -316,7 +319,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 200px; height: 100px; <br />
     BigText also works with line breaks added manually. The default is to center the text on each line, but that can be changed using the textAlign property
     <pre>
-    $("span#span12").bigText({
+    BigText("span#span12",{
       textAlign: "right"
     });
     </pre>
@@ -332,7 +335,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     div size: width: 200px; height: 80px; padding: 30px <br />
     BigText understands padding on the enclosing div, so your text can have some breathing room without the need of multiple divs. In this example the enclosing div has a 30px padding added to it.
     <pre>
-    $("span#span13").bigText();
+    BigText("span#span13");
     </pre>
     <div class="test-div" style="
         width: 200px;
@@ -347,8 +350,10 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     <h2>Final Example</h2>
     A more complex arrangement
     <pre>
-        $("span#complex_span1, span#complex_span2, span#complex_span3").bigText();
-        $("span#complex_span4").bigText({
+        BigText("span#complex_span1");
+        BigText("span#complex_span2");
+        BigText("span#complex_span3");
+        BigText("span#complex_span4",{
             rotateText: -45,
             fontSizeFactor: 1
         });
@@ -392,7 +397,7 @@ Full documentation available on <a href="https://github.com/DanielHoffmann/jquer
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Jquery-bigtext maintained by <a href="https://github.com/DanielHoffmann">DanielHoffmann</a></p>
+        <p class="copyright">BigText.js maintained by <a href="https://github.com/BrOrlandi">Bruno Orlandi</a></p>
       </footer>
     </div>
   </body>

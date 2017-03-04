@@ -1,23 +1,14 @@
-jquery-bigtext
+bigtext.js
 ==============
-jQuery plugin that makes HTML text tags as big as possible while still fitting on the parent.
-
-Requirements
-==============
-jQuery 1.3.1 or higher
+A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.
 
 Browser Compatibility
 ==============
-Internet Explorer 9 or higher (might work on older versions)
-
-Opera
-
-Firefox
-
-Google Chrome
-
-Safari
-
+ - Internet Explorer 9 or higher (might work on older versions)
+ - Opera
+ - Firefox
+ - Google Chrome
+ - Safari
 
 Examples
 ==============
@@ -28,19 +19,19 @@ Examples
 </div>
 ```
 ```javascript
-$("#span").bigText();
+BigText("#span");
 ```
 
 With one simple line the text "BigText" will now have its font-size increased but without overflowing the element parent div.
 
-See more examples in http://danielhoffmann.github.io/jquery-bigtext/
+See more examples in https://brorlandi.github.io/bigtext.js/
 
 
 Usage
 ==============
 
 ```javascript
-$("#span").bigText({
+BigText("#span",{
 	rotateText: {Number}, (null)
 	fontSizeFactor: {Number}, (0.8)
 	maximumFontSize: {Number}, (null)
@@ -53,19 +44,19 @@ $("#span").bigText({
 
 Options
 ==============
-rotateText: Rotates the text inside the element by X degrees.
+**rotateText**: Rotates the text inside the element by X degrees.
 
-fontSizeFactor: This option is used to give some vertical spacing for letters that overflow the line-height (like 'g', 'Á' and most other accentuated uppercase letters). This does not affect the font-size if the limiting factor is the width of the parent div. The default is 0.8
+**fontSizeFactor**: This option is used to give some vertical spacing for letters that overflow the line-height (like 'g', 'Á' and most other accentuated uppercase letters). This does not affect the font-size if the limiting factor is the width of the parent div. The default is 0.8
 
-maximumFontSize: maximum font size to use.
+**maximumFontSize**: maximum font size to use.
 
-limitingDimension: In which dimension the font size should be limited. Possible values: "width", "height" or "both". Defaults to both. Using this option with values different than "both" overwrites the element parent width or height.
+**limitingDimension**: In which dimension the font size should be limited. Possible values: "width", "height" or "both". Defaults to both. Using this option with values different than "both" overwrites the element parent width or height.
 
-horizontalAlign: Where to align the text horizontally. Possible values: "left", "center", "right". Defaults to "center".
+**horizontalAlign**: Where to align the text horizontally. Possible values: "left", "center", "right". Defaults to "center".
 
-verticalAlign: Where to align the text vertically. Possible values: "top", "center", "bottom". Defaults to "center".
+**verticalAlign**: Where to align the text vertically. Possible values: "top", "center", "bottom". Defaults to "center".
 
-textAlign: Sets the text align of the element. Possible values: "left", "center", "right". Defaults to "center". This option is only useful if there are linebreaks (<br> tags) inside the text.
+**textAlign**: Sets the text align of the element. Possible values: "left", "center", "right". Defaults to "center". This option is only useful if there are linebreaks (<br> tags) inside the text.
 
 
 License
