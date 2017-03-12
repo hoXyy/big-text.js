@@ -39,6 +39,7 @@ BigText("#span",{
 	horizontalAlign: {String}, ("center")
 	verticalAlign: {String}, ("center")
 	textAlign: {String}, ("center")
+	whiteSpace: {String}, ("nowrap")
 });
 ```
 
@@ -56,8 +57,9 @@ Options
 
 **verticalAlign**: Where to align the text vertically. Possible values: "top", "center", "bottom". Defaults to "center".
 
-**textAlign**: Sets the text align of the element. Possible values: "left", "center", "right". Defaults to "center". This option is only useful if there are linebreaks (<br> tags) inside the text.
+**textAlign**: Sets the text align of the element. Possible values: "left", "center", "right". Defaults to "center". This option is only useful if there are linebreaks (`<br>` tags) inside the text.
 
+**whiteSpace**: Sets whitespace handling. Possible values: "nowrap", "pre". Defaults to "nowrap". (Can also be set to enable wrapping but this doesn't work well.)
 
 License
 ==============
