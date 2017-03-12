@@ -1,7 +1,7 @@
 {
   "name": "big-text.js",
   "version": "0.1.0",
-  "description": "A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.",
+  "description": "A JavaScript lib that makes text as big as possible while still fitting on the parent element.",
   "main": "big-text.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

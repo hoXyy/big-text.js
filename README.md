@@ -1,36 +1,16 @@
-big-text.js
-==============
+# big-text.js
+
 A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.
 
-Browser Compatibility
-==============
- - Internet Explorer 9 or higher (might work on older versions)
- - Opera
- - Firefox
- - Google Chrome
- - Safari
+## Installation
 
-Examples
-==============
+	npm install --save big-text.js
 
-```html
-<div style="width: 300px, height: 200px">
-  <span id="span">BigText</span>
-</div>
-```
-```javascript
-BigText("#span");
-```
-
-With one simple line the text "BigText" will now have its font-size increased but without overflowing the element parent div.
-
-See more examples in https://brorlandi.github.io/big-text.js/
-
-
-Usage
-==============
+## Usage
 
 ```javascript
+import BigText from 'big-text.js';
+
 BigText("#span",{
 	rotateText: {Number}, (null)
 	fontSizeFactor: {Number}, (0.8)
@@ -43,8 +23,8 @@ BigText("#span",{
 });
 ```
 
-Options
-==============
+## Options
+
 **rotateText**: Rotates the text inside the element by X degrees.
 
 **fontSizeFactor**: This option is used to give some vertical spacing for letters that overflow the line-height (like 'g', 'Á' and most other accentuated uppercase letters). This does not affect the font-size if the limiting factor is the width of the parent div. The default is 0.8
@@ -61,6 +41,28 @@ Options
 
 **whiteSpace**: Sets whitespace handling. Possible values: "nowrap", "pre". Defaults to "nowrap". (Can also be set to enable wrapping but this doesn't work well.)
 
-License
-==============
+
+## Examples
+
+```html
+<div style="width: 300px, height: 200px">
+  <span id="span">BigText</span>
+</div>
+```
+```javascript
+BigText("#span");
+```
+
+With one simple line the text "BigText" will now have its font-size increased but without overflowing the element parent div.
+
+See more examples in https://brorlandi.github.io/big-text.js/
+
+## Browser Compatibility
+ - Internet Explorer 9 or higher (might work on older versions)
+ - Opera
+ - Firefox
+ - Google Chrome
+ - Safari
+
+## License
 This project is released under the MIT license.
