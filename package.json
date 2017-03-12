@@ -1,6 +1,6 @@
 {
   "name": "bigtext.js",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.",
   "main": "bigtext.js",
   "scripts": {
