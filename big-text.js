@@ -1,5 +1,5 @@
 /*
-Brorlandi/bigtext.js v1.0.0, 2017
+Brorlandi/big-text.js v1.0.0, 2017
 Adapted from DanielHoffmann/jquery-bigtext, v1.3.0, May 2014
 And from Jetroid/bigtext.js v1.0.0, September 2016
 

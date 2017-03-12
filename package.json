@@ -1,14 +1,14 @@
 {
-  "name": "bigtext.js",
+  "name": "big-text.js",
   "version": "0.1.0",
   "description": "A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.",
-  "main": "bigtext.js",
+  "main": "big-text.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrOrlandi/bigtext.js.git"
+    "url": "git+https://github.com/BrOrlandi/big-text.js.git"
   },
   "keywords": [
     "jquery",
@@ -21,7 +21,7 @@
   "author": "Bruno Orlandi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BrOrlandi/bigtext.js/issues"
+    "url": "https://github.com/BrOrlandi/big-text.js/issues"
   },
-  "homepage": "https://brorlandi.github.io/bigtext.js"
+  "homepage": "https://brorlandi.github.io/big-text.js"
 }

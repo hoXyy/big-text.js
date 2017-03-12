@@ -1,4 +1,4 @@
-bigtext.js
+big-text.js
 ==============
 A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.
 
@@ -24,7 +24,7 @@ BigText("#span");
 
 With one simple line the text "BigText" will now have its font-size increased but without overflowing the element parent div.
 
-See more examples in https://brorlandi.github.io/bigtext.js/
+See more examples in https://brorlandi.github.io/big-text.js/
 
 
 Usage
