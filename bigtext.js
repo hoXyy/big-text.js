@@ -238,3 +238,5 @@ BigText = function(element, options){
 
 	return element;
 }
+
+module.exports = BigText;
