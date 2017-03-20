@@ -15,7 +15,7 @@ BigText("#span",{
 	rotateText: {Number}, (null)
 	fontSizeFactor: {Number}, (0.8)
 	maximumFontSize: {Number}, (null)
-	limitingDimension: {Number}, ("both")
+	limitingDimension: {String}, ("both")
 	horizontalAlign: {String}, ("center")
 	verticalAlign: {String}, ("center")
 	textAlign: {String}, ("center")
