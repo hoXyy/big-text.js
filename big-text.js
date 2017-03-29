@@ -227,7 +227,7 @@ BigText = function(element, options){
 		break;
 		case "right":
 			style.left = "100%";
-			style.marginTop = Math.floor(-innerWidth) + "px";
+			style.marginLeft = Math.floor(-innerWidth) + "px";
 		break;
 		default:
 			style.marginLeft = Math.floor((-innerWidth / 2)) + "px";
