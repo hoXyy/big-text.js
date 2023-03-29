@@ -1,26 +1,44 @@
 {
-  "name": "big-text.js",
-  "version": "1.0.1",
-  "description": "A lib that makes text as big as possible while still fitting on the parent element.",
-  "main": "big-text.js",
+  "name": "big-text.ts",
+  "version": "1.1.0",
+  "description": "A lib that makes text as big as possible while still fitting on the parent element, ported to TypeScript.",
+  "main": "lib/big-text.js",
+  "types": "lib/big-text.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint ./src",
+    "lint-dry-fix": "eslint --fix-dry-run ./src",
+    "lint-fix": "eslint --fix ./src",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm run lint",
+    "preversion" : "npm run lint",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BrOrlandi/big-text.js.git"
+    "url": "git+https://github.com/hoXyy/big-text.js.git"
   },
   "keywords": [
     "bigtext",
     "text"
   ],
   "contributors": [
-    "Daniel Hoffmann Bernardes"
+    "Daniel Hoffmann Bernardes",
+    "hoXyy"
   ],
   "author": "Bruno Orlandi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/BrOrlandi/big-text.js/issues"
+    "url": "https://github.com/hoXyy/big-text.js/issues"
   },
-  "homepage": "https://brorlandi.github.io/big-text.js"
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.2"
+  }
 }

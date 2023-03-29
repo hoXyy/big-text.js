@@ -1,15 +1,15 @@
 # big-text.js
 
-A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext.
+A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext. Ported to TypeScript by hoXyy.
 
 ## Installation
 
-	npm install --save big-text.js
+	npm install --save big-text.js-typescript
 
 ## Usage
 
 ```javascript
-import BigText from 'big-text.js';
+import BigText from 'big-text.js-typescript';
 
 BigText("#span",{
 	rotateText: {Number}, (null)
