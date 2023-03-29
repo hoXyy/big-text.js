@@ -11,7 +11,7 @@ A JavaScript lib that makes text as big as possible while still fitting on the p
 ```javascript
 import BigText from 'big-text.ts';
 
-BigText(document.querySelector("#span") ,{
+BigText(document.querySelector("#span"), {
 	rotateText: {Number}, (null)
 	fontSizeFactor: {Number}, (0.8)
 	maximumFontSize: {Number}, (null)
