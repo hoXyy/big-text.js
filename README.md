@@ -1,6 +1,6 @@
 # big-text.ts
 
-A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext. Originally create by Bruno Orlandi, ported to TypeScript by Paweł Zatoka.
+A JavaScript lib that makes text as big as possible while still fitting on the parent element. Based on DanielHoffmann/jquery-bigtext. Originally created by Bruno Orlandi, ported to TypeScript by Paweł Zatoka.
 
 ## Installation
 
