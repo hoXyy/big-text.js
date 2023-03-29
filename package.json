@@ -1,6 +1,6 @@
 {
   "name": "big-text.ts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A lib that makes text as big as possible while still fitting on the parent element, ported to TypeScript.",
   "main": "lib/big-text.js",
   "types": "lib/big-text.d.ts",
@@ -10,9 +10,9 @@
     "lint": "eslint ./src",
     "lint-dry-fix": "eslint --fix-dry-run ./src",
     "lint-fix": "eslint --fix ./src",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm run lint",
-    "preversion" : "npm run lint",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
     "version": "git add -A src",
     "postversion": "git push && git push --tags"
   },
