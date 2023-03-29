@@ -1,3 +1,5 @@
 docs/
 README.md
 src/
+tsconfig.json
+.eslintrc.cjs
